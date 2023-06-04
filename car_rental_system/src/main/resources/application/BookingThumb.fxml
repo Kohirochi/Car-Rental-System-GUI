@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="105.0" prefWidth="1160.0" style="-fx-background-color: #F6F6F6; -fx-background-radius: 10px; -fx-border-radius: 10px;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BookingThumbController">
+   <children>
+      <ImageView fx:id="carImage" fitHeight="85.0" fitWidth="122.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/car/exora.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="85.0" prefWidth="621.0">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="carName" prefHeight="30.0" text="2019 Proton Saga ">
+                     <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="carPlateNumber" alignment="CENTER" prefHeight="24.0" style="-fx-background-color: black; -fx-background-radius: 5px;" text="WUE 7678" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="bookingDuration" prefHeight="55.0" text="Jan 23, 2022 - Jan 25, 2022">
+               <font>
+                  <Font name="Segoe UI Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" prefHeight="85.0">
+               <children>
+                  <Button fx:id="btnPay" mnemonicParsing="false" onAction="#switchToMakePayment" prefHeight="23.0" prefWidth="94.0" style="-fx-background-color: #04acfe;" text="Pay" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="85.0">
+               <children>
+                  <Label fx:id="labelStatus" prefHeight="18.0" style="-fx-background-color: #08FF2F; -fx-background-radius: 20px;" text="Approved" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="3.0" left="15.0" right="15.0" top="3.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" onMouseClicked="#switchToBookingDetails" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/right-arrow.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</HBox>

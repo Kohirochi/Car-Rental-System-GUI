@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminUpcomingBookingController">
+   <children>
+      <Pane fx:id="upcomingBooking" layoutX="200.0" prefHeight="735.0" prefWidth="1071.0" style="-fx-background-color: #F5F5F5;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Line endX="978.0" endY="-1.1444091796875E-5" layoutX="101.0" layoutY="63.0" startX="-100.0" strokeWidth="2.0" />
+            <Label prefHeight="63.0" prefWidth="1079.0" text="Upcoming Booking">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Label>
+            <Pane layoutX="21.0" layoutY="83.0" prefHeight="626.0" prefWidth="1039.0" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 6,0,0,0);">
+               <children>
+                  <Pane prefHeight="293.0" prefWidth="1039.0" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 6,0,0,0);">
+                     <children>
+                        <TableView fx:id="tableUpcomingBooking" layoutX="15.0" layoutY="57.0" onMouseClicked="#showSelectedRow" prefHeight="226.0" prefWidth="1010.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-border-color: linear-gradient(to bottom right, #00437A, #008BBE); -fx-border-width: 2px; -fx-border-radius: 10px 10px 0 0;" stylesheets="@application.css">
+                          <columns>
+                            <TableColumn fx:id="colBookingID" prefWidth="84.79998779296875" style="-fx-alignment: CENTER;" text="Booking ID" />
+                            <TableColumn fx:id="colCustomer" prefWidth="89.60003662109375" style="-fx-alignment: CENTER;" text="Customer" />
+                              <TableColumn fx:id="colGender" prefWidth="68.79998779296875" style="-fx-alignment: CENTER;" text="Gender" />
+                              <TableColumn fx:id="colContact" prefWidth="92.0" style="-fx-alignment: CENTER;" text="Contact" />
+                              <TableColumn fx:id="colCar" prefWidth="116.0" style="-fx-alignment: CENTER;" text="Car" />
+                              <TableColumn fx:id="colPickUpDate" prefWidth="98.0" style="-fx-alignment: CENTER;" text="Pick-up Date" />
+                              <TableColumn fx:id="colDropOffDate" prefWidth="98.0" style="-fx-alignment: CENTER;" text="Drop-off Date" />
+                              <TableColumn fx:id="colDuration" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Duration (Day)" />
+                              <TableColumn fx:id="colPickUpTime" prefWidth="98.0" style="-fx-alignment: CENTER;" text="Pick-up Time" />
+                              <TableColumn fx:id="colDropOffTime" prefWidth="98.0" style="-fx-alignment: CENTER;" text="Drop-off Time" />
+                              <TableColumn fx:id="colPrice" prefWidth="90.0" style="-fx-alignment: CENTER;" text="Price (RM)" />
+                              <TableColumn fx:id="colPaymentStatus" prefWidth="107.199951171875" style="-fx-alignment: CENTER;" text="Payment Status" />
+                              <TableColumn fx:id="colBookingStatus" prefWidth="107.199951171875" style="-fx-alignment: CENTER;" text="Booking Status" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="txtSearch" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="186.0" promptText="Search">
+                           <padding>
+                              <Insets left="28.0" />
+                           </padding></TextField>
+                        <ImageView fx:id="iconSearch" fitHeight="15.0" fitWidth="25.0" layoutX="23.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/search.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnExport" layoutX="930.0" layoutY="14.0" mnemonicParsing="false" onAction="#export" prefHeight="17.0" prefWidth="95.0" style="-fx-background-color: #36ff50;" text="Export" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Black" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <TextField fx:id="txtBookingID" editable="false" layoutX="122.0" layoutY="323.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtContact" editable="false" layoutX="122.0" layoutY="488.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtPrice" editable="false" layoutX="792.0" layoutY="378.0" prefHeight="25.0" prefWidth="190.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="323.0" prefHeight="25.0" prefWidth="68.0" text="Booking ID :" />
+                  <Button fx:id="btnRentedOut" layoutX="753.0" layoutY="571.0" mnemonicParsing="false" onAction="#markAsRentedOut" prefHeight="41.0" prefWidth="162.0" style="-fx-background-color: #399A6E; -fx-background-radius: 8;" text="Mark as Rented Out" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="btnClear" layoutX="941.0" layoutY="571.0" mnemonicParsing="false" onAction="#clear" prefHeight="41.0" prefWidth="84.0" style="-fx-background-color: #F2C200; -fx-background-radius: 8;" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="378.0" prefHeight="25.0" prefWidth="68.0" text="Customer :" />
+                  <Label fx:id="customerError" layoutX="124.0" layoutY="403.0" prefHeight="17.0" prefWidth="149.0" text="Year error" textFill="RED" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="18.0" layoutY="488.0" prefHeight="25.0" prefWidth="95.0" text="Contact :" />
+                  <Label fx:id="contactError" layoutX="124.0" layoutY="513.0" prefHeight="17.0" prefWidth="149.0" text="Brand error" textFill="RED" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="333.0" layoutY="433.0" prefHeight="25.0" prefWidth="95.0" text="Drop-off Date :" />
+                  <Label fx:id="dropOffDateError" layoutX="439.0" layoutY="458.0" prefHeight="17.0" prefWidth="149.0" text="Error" textFill="RED" visible="false" />
+                  <Pane layoutX="813.0" layoutY="323.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 6,0,0,0); -fx-background-color: white; -fx-background-radius: 5px;" />
+                  <Label alignment="CENTER_RIGHT" layoutX="350.0" layoutY="323.0" prefHeight="25.0" prefWidth="78.0" text="Car :" />
+                  <Label fx:id="carError" layoutX="439.0" layoutY="348.0" prefHeight="17.0" prefWidth="149.0" text="Error" textFill="RED" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="350.0" layoutY="378.0" prefHeight="25.0" prefWidth="78.0" text="Pick-up Date :" />
+                  <Label fx:id="pickUpDateError" layoutX="439.0" layoutY="403.0" prefHeight="17.0" prefWidth="149.0" text="Error" textFill="RED" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="689.0" layoutY="378.0" prefHeight="25.0" prefWidth="95.0" text="Price :" />
+                  <Label alignment="CENTER_RIGHT" layoutX="333.0" layoutY="488.0" prefHeight="25.0" prefWidth="95.0" text="Pick-up Time :" />
+                  <Label fx:id="pickUpTimeError" layoutX="439.0" layoutY="513.0" prefHeight="17.0" prefWidth="149.0" text="Error" textFill="RED" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="689.0" layoutY="323.0" prefHeight="25.0" prefWidth="95.0" text="Drop-off Time :" />
+                  <Label fx:id="dropOffTimeError" layoutX="794.0" layoutY="348.0" prefHeight="17.0" prefWidth="149.0" text="Error" textFill="RED" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="18.0" layoutY="433.0" prefHeight="25.0" prefWidth="95.0" text="Gender :" />
+                  <Label fx:id="genderError" layoutX="124.0" layoutY="458.0" prefHeight="17.0" prefWidth="149.0" text="Brand error" textFill="RED" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="689.0" layoutY="433.0" prefHeight="25.0" prefWidth="95.0" text="Payment Status :" />
+                  <Label fx:id="paymentStatusError" layoutX="794.0" layoutY="458.0" prefHeight="17.0" prefWidth="149.0" text="Brand error" textFill="RED" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="689.0" layoutY="488.0" prefHeight="25.0" prefWidth="95.0" text="Booking Status :" />
+                  <Label fx:id="bookingStatusError" layoutX="794.0" layoutY="513.0" prefHeight="17.0" prefWidth="149.0" text="Brand error" textFill="RED" visible="false" />
+                  <TextField fx:id="txtPaymentStatus" editable="false" layoutX="792.0" layoutY="433.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtBookingStatus" editable="false" layoutX="792.0" layoutY="488.0" prefHeight="25.0" prefWidth="190.0" />
+                  <Button fx:id="btnCompleted" layoutX="753.0" layoutY="571.0" mnemonicParsing="false" onAction="#markAsCompleted" prefHeight="41.0" prefWidth="162.0" style="-fx-background-color: #399A6E; -fx-background-radius: 8;" text="Mark as Completed" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField fx:id="txtDropOffTime" editable="false" layoutX="792.0" layoutY="323.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtCar" editable="false" layoutX="439.0" layoutY="323.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtCustomer" editable="false" layoutX="122.0" layoutY="378.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtGender" editable="false" layoutX="122.0" layoutY="433.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtPickUpDate" editable="false" layoutX="439.0" layoutY="378.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtDropOffDate" editable="false" layoutX="439.0" layoutY="433.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="txtPickUpTime" editable="false" layoutX="439.0" layoutY="488.0" prefHeight="25.0" prefWidth="190.0" />
+                  <Label fx:id="labelPenalty" alignment="CENTER_RIGHT" layoutX="307.0" layoutY="559.0" prefHeight="25.0" prefWidth="121.0" text="Penalty :" visible="false" />
+                  <TextField fx:id="txtPenalty" editable="false" layoutX="439.0" layoutY="559.0" prefHeight="25.0" prefWidth="190.0" visible="false" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #000000;">
+         <children>
+            <VBox layoutY="92.0" prefHeight="566.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnDashboard" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="DASHBOARD" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconDashboard" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_dashboard_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnCar" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="CAR" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconCar" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_car_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnAdmin" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="ADMIN" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconAdmin" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_admin_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnCustomer" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="CUSTOMER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconCustomer" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_customer_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnInvoice" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="INVOICE" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconInvoice" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_invoice_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnBookingRequest" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="57.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="BOOKING REQUEST" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconBookingRequest" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_booking_request_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnUpcomingBooking" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="57.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="UPCOMING BOOKING" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconUpcomingBooking" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_upcoming_booking_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnBookingHistory" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="57.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="BOOKING HISTORY" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconBookingHistory" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_booking_history_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnReport" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="REPORT" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconReport" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_report_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnLog" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="LOG" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconLog" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_log_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnProfile" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchPane" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #000000;" text="PROFILE" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="iconProfile" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/nav_profile_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fx:id="logo" fitHeight="42.0" fitWidth="150.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo_horizontal.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="46.0" layoutY="670.0" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: #000000;" text="Admin" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnLogOut" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="131.0" layoutY="670.0" mnemonicParsing="false" onAction="#logOut" prefHeight="42.0" prefWidth="45.0" style="-fx-background-color: #000000;">
+               <font>
+                  <Font name="Georgia" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="iconLogOut" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/nav_logout_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Line endX="857.7858276367188" endY="33.79998779296875" layoutX="-671.0" layoutY="627.0" startX="684.98583984375" startY="33.79998779296875" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

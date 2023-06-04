@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyBookingsController">
+   <children>
+      <Pane prefHeight="88.0" prefWidth="1280.0" style="-fx-background-color: #30B3F3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="16.0" onMouseClicked="#switchToHomeMouseEvent" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo_horizontal.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <HBox fx:id="customerHBox" alignment="CENTER_RIGHT" layoutX="985.0" prefHeight="88.0" prefWidth="241.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/user_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="customerName" prefHeight="30.0" text="Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" onMouseClicked="#showDropdown" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/dropdown_arrow.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <VBox layoutX="91.0" layoutY="137.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+         <children>
+            <Hyperlink fx:id="linkBack" focusTraversable="false" onAction="#switchToHomeActionEvent" text="&lt; Back To Home">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Hyperlink>
+            <VBox prefHeight="537.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 6,0,0,0);">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <GridPane prefHeight="44.0" prefWidth="1200.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox onMouseClicked="#toUpcoming">
+                           <children>
+                              <Label fx:id="upcoming" alignment="CENTER" prefHeight="44.0" prefWidth="302.0" text="Upcoming" textFill="#00437a" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Line fx:id="upcomingLine" endX="299.0" stroke="#00437a" strokeWidth="1.5">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Line>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </VBox>
+                        <VBox onMouseClicked="#toAwaitingRequest" GridPane.columnIndex="1">
+                           <children>
+                              <Label fx:id="awaiting" alignment="CENTER" prefHeight="44.0" prefWidth="302.0" text="Awaiting Confirmation" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Line fx:id="awaitingLine" endX="299.0" stroke="#ffffff00" strokeWidth="1.5">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Line>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </VBox>
+                        <VBox onMouseClicked="#toCompleted" GridPane.columnIndex="2">
+                           <children>
+                              <Label fx:id="completed" alignment="CENTER" prefHeight="44.0" prefWidth="302.0" text="Completed" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Line fx:id="completedLine" endX="299.0" stroke="#ffffff00" strokeWidth="1.5">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Line>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </VBox>
+                        <VBox onMouseClicked="#toRejectedAndCancelled" GridPane.columnIndex="3">
+                           <children>
+                              <Label fx:id="rejectedAndCancelled" alignment="CENTER" prefHeight="44.0" prefWidth="302.0" text="Rejected / Cancelled" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Line fx:id="rejectedAndCancelledLine" endX="299.0" stroke="#ffffff00" strokeWidth="1.5">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Line>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </VBox>
+                     </children>
+                  </GridPane>
+                  <ScrollPane prefHeight="485.0" prefWidth="1200.0" style="-fx-background: #FFFFFF; -fx-background-color: transparent;" stylesheets="@application.css">
+                     <content>
+                        <GridPane fx:id="bookingGrid" prefHeight="34.0" prefWidth="0.0" vgap="10.0">
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="dropdownMenu" layoutX="1090.0" layoutY="60.0" prefHeight="90.0" prefWidth="136.0" style="-fx-background-color: #00437A;" visible="false">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToMyBookings" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="My Bookings" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#switchToCustomerProfile" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="Account Settings" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

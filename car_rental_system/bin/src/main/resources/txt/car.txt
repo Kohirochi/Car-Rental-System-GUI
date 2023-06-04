@@ -1,0 +1,15 @@
+1|2019|Proton|Saga|BPC 8936|Red|Sedan|Manual|Petrol|1.3|5|150.60|Active|saga.jpg
+2|2017|Honda|City|VD 1613|Silver|Sedan|Automatic|Petrol|1.5|5|208.79|Active|city.jpg
+3|2015|Proton|Exora|BMT 3692|Black|MPV|Automatic|Petrol|1.6|5|271.82|Active|exora.jpg
+4|2020|Toyota|Innova|PDD 783|Red|MPV|Automatic|Petrol|2.5|7|361.49|Active|innova.png
+5|2016|Perodua|Axia|WWR 4139|White|Hatchback|Manual|Petrol|1.0|5|124.36|Active|axia.jpeg
+6|2015|Honda|CR-V|WA 38 E|Brown|SUV|Automatic|Petrol|2.0|5|408.67|Active|crv.png
+7|2014|Toyota|Camry|BFG 8826|Black|Sedan|Automatic|Petrol|2.5|5|431.37|Active|camry.png
+8|2017|Hyundai|Grand Starex|JRE 3036|Silver|MPV|Automatic|Diesel|2.5|11|580.19|Active|starex.jpg
+9|2015|Nissan|X-Trail|WE 1238 E|White|SUV|Automatic|Diesel|2.0|7|430.89|Active|xtrail.jpg
+10|2018|BMW|X1|BJS 3381|White|SUV|Automatic|Petrol|2.0|5|684.69|Active|x1.png
+11|2014|Toyota|Vios|WUU 6869|Red|Sedan|Automatic|Petrol|1.5|5|257.93|Active|vios.jpg
+12|2021|Proton|Suprima|WUH 9384|Blue|Hatchback|Automatic|Petrol|1.6|5|200|Trash|bluecar.jpg
+13|2021|Proton|Suprima|WEI 1931|Blue|Hatchback|Automatic|Petrol|1.6|5|200|Trash|bluecar.jpg
+14|2021|Proton|Suprima|WUE 8394|Blue|Hatchback|Automatic|Petrol|1.6|5|200|Trash|bluecar.jpg
+15|2021|Proton|Suprima|DDD 0391|Blue|Hatchback|Automatic|Petrol|1.6|5|200|Active|bluecar.jpg

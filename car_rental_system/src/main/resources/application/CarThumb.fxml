@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#switchToCarDetails" prefHeight="253.0" prefWidth="300.0" style="-fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 6,0,0,0); -fx-background-color: white; -fx-border-radius: 8px; -fx-border-color: #e2e8f0;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CarThumbController">
+   <children>
+      <ImageView fx:id="carImage" fitHeight="175.0" fitWidth="280.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/car/camry.png" />
+         </image>
+      </ImageView>
+      <HBox prefHeight="63.0" prefWidth="302.0">
+         <children>
+            <Label fx:id="carName" alignment="TOP_LEFT" prefHeight="38.0" prefWidth="180.0" text="Year Brand Model Test Test TEst TEst" wrapText="true">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="38.0" prefWidth="85.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="carPrice" alignment="TOP_RIGHT" prefHeight="17.0" prefWidth="94.0" text="RM 0000.00" wrapText="true">
+                     <font>
+                        <Font name="SansSerif Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_RIGHT" prefHeight="37.0" prefWidth="94.0" text="per day" wrapText="true">
+                     <font>
+                        <Font name="SansSerif Regular" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</VBox>

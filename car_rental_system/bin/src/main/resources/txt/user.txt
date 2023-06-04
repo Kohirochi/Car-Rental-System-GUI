@@ -1,0 +1,12 @@
+1|Jimmy|admin@gmail.com|admin123|Admin|Male;+60165509273|Active
+2|Yong Kai Bin|kaibinyong2002@gmail.com|kaibin123|Customer|Male;-;2002-03-09;+60165509230;Andorra|Active
+3|Test|test@gmail.com|12345678|Customer|Female;-;2022-12-02;+60165092341;Andorra|Inactive
+4|Chai Li Qi|liqi2002@gmail.com|liqi1234|Customer|Male;020122-14-1513;2002-03-10;+60165275452;Malaysia|Active
+5|Jett|jett2910@gmail.com|jett12345|Customer|-;020122-14-1513;2002-03-10;+60165509230;Malaysia|Active
+6|Ellyis|ellyis@gmail.com|12345678|Customer|Male;020122-14-1513;2002-03-10;+60165509230;Malaysia|Active
+7|Kai|kai@gmail.com|kaikai123|Customer|Male;020122-14-1513;-;-;United Arab Emirates|Active
+8|John Smith|jsmith@gmail.com|jsmith123|Customer|Male;020122-14-1513;2002-03-10;-;Malaysia|Trash
+9|John|john@gmail.com|12345678|Customer|-;-;-;-;-|Active
+10|Natasha|admin2@gmail.com|admin123|Admin|Female;+60123597863|Active
+11|test|testtest@gmail.com|test12345|Admin|-;-|Trash
+12|Ali|ali@gmail.com|ali1234567|Customer|Male;020122-14-1513;2022-12-10;-;United Arab Emirates|Active

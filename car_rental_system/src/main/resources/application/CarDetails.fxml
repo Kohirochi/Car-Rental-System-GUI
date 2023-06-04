@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CarDetailsController">
+   <children>
+      <Pane fx:id="header" prefHeight="88.0" prefWidth="1280.0" style="-fx-background-color: #30B3F3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="btnLogin" layoutX="1109.0" layoutY="25.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="36.0" prefWidth="136.0" style="-fx-background-color: #4EF654; -fx-background-radius: 10px;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="16.0" onMouseClicked="#switchToHomeMouseEvent" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo_horizontal.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Hyperlink fx:id="btnRegister" layoutX="1013.0" layoutY="32.0" onAction="#switchToRegistration" prefHeight="23.0" prefWidth="59.0" style="-fx-text-fill: white;" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+            </Hyperlink>
+            <HBox fx:id="customerHBox" alignment="CENTER_RIGHT" layoutX="985.0" prefHeight="88.0" prefWidth="241.0" visible="false">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/user_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="customerName" prefHeight="30.0" text="Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" onMouseClicked="#showDropdown" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/dropdown_arrow.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <VBox layoutY="88.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+         <children>
+            <Hyperlink fx:id="linkBack" onAction="#switchToHomeActionEvent" text="&lt; Back To Home">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Hyperlink>
+            <HBox prefHeight="416.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5px;">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="396.0" prefWidth="432.0" spacing="15.0">
+                     <children>
+                        <ImageView fx:id="carImage" fitHeight="292.0" fitWidth="411.0" pickOnBounds="true" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../image/car/persona.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#bookCar" prefHeight="62.0" prefWidth="412.0" style="-fx-background-color: #30B3F3; -fx-background-radius: 8px;" text="Book This Car Now" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="416.0" prefWidth="507.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="txtName" prefHeight="71.0" prefWidth="749.0" text="Year Brand Model" wrapText="true" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="SansSerif Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="46.0" prefWidth="459.0">
+                           <children>
+                              <Label fx:id="txtPrice" alignment="TOP_LEFT" prefHeight="46.0" text="RM 0000.00" textFill="RED">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_LEFT" prefHeight="46.0" prefWidth="84.0" text=" / Day" textFill="RED" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <GridPane hgap="10.0" prefHeight="234.0" prefWidth="649.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="20.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FBFAFB; -fx-background-radius: 5px;">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/colour.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="14.0" prefWidth="204.0" text="Colour" textFill="#b8b8b7">
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="txtColour" alignment="TOP_LEFT" prefHeight="34.0" prefWidth="204.0" text="Red" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FBFAFB; -fx-background-radius: 5px;" GridPane.columnIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/car.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="14.0" prefWidth="204.0" text="Body Type" textFill="#b8b8b7">
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="txtBodyType" alignment="TOP_LEFT" prefHeight="34.0" prefWidth="204.0" text="Coupe" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FBFAFB; -fx-background-radius: 5px;" GridPane.columnIndex="2">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/transmission.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="14.0" prefWidth="204.0" text="Transmission" textFill="#b8b8b7">
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="txtTransmission" alignment="TOP_LEFT" prefHeight="34.0" prefWidth="204.0" text="Coupe" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FBFAFB; -fx-background-radius: 5px;" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/fuel_type.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="14.0" prefWidth="204.0" text="Fuel Type" textFill="#b8b8b7">
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="txtFuelType" alignment="TOP_LEFT" prefHeight="34.0" prefWidth="204.0" text="Petrol" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FBFAFB; -fx-background-radius: 5px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/engine_capacity.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="14.0" prefWidth="204.0" text="Engine Capacity" textFill="#b8b8b7">
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="txtEngineCapacity" alignment="TOP_LEFT" prefHeight="34.0" prefWidth="204.0" text="1.5" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FBFAFB; -fx-background-radius: 5px;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/seats.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label prefHeight="14.0" prefWidth="204.0" text="Seats" textFill="#b8b8b7">
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="txtSeats" alignment="TOP_LEFT" prefHeight="34.0" prefWidth="204.0" text="1" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="dropdownMenu" layoutX="1090.0" layoutY="60.0" prefHeight="90.0" prefWidth="136.0" style="-fx-background-color: #00437A;" visible="false">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToMyBookings" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="My Bookings" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#switchToCustomerProfile" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="Account Settings" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

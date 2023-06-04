@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyBookingDetailsController">
+   <children>
+      <Pane prefHeight="88.0" prefWidth="1280.0" style="-fx-background-color: #30B3F3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="16.0" onMouseClicked="#switchToHomeMouseEvent" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo_horizontal.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <HBox fx:id="customerHBox" alignment="CENTER_RIGHT" layoutX="985.0" prefHeight="88.0" prefWidth="241.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/user_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="customerName" prefHeight="30.0" text="Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" onMouseClicked="#showDropdown" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/dropdown_arrow.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <VBox layoutX="91.0" layoutY="137.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+         <children>
+            <Hyperlink fx:id="linkBack" focusTraversable="false" onAction="#switchToMyBookings" text="&lt; Back To My Bookings">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Hyperlink>
+            <VBox prefHeight="554.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 6,0,0,0);">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <VBox prefWidth="1200.0">
+                     <children>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets bottom="9.0" left="30.0" right="30.0" top="9.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label prefHeight="36.0" prefWidth="1006.0" text="Booking Details" textFill="#00437a">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnExport" mnemonicParsing="false" onAction="#exportInvoice" prefHeight="36.0" style="-fx-background-color: #399A6E;" text="Export Invoice" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Line fx:id="personalDetailsLine" endX="1199.0" stroke="#9b9b9b" strokeWidth="0.5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Line>
+                     </children>
+                  </VBox>
+                  <VBox VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox prefWidth="1200.0">
+                           <children>
+                              <Label prefHeight="36.0" text="Booking" textFill="#00437a">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefWidth="1141.0" spacing="20.0">
+                                 <children>
+                                    <VBox prefWidth="366.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="ID" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtID" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="366.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Pick Up Date &amp; Time" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtPickUpDateTime" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="366.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Drop Off Date &amp; Time" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtDropOffDateTime" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="366.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Amount" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtPrice" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefWidth="1139.0" spacing="20.0">
+                                 <children>
+                                    <VBox prefWidth="270.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Payment Status" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtPaymentStatus" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="270.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Booking Status" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtBookingStatus" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="270.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Date Created" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtDateCreated" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Line fx:id="personalDetailsLine1" endX="1139.0" stroke="#9b9b9b" strokeWidth="0.5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Line>
+                        <VBox prefWidth="1200.0">
+                           <children>
+                              <Label prefHeight="36.0" text="Car" textFill="#00437a">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefWidth="1139.0" spacing="20.0">
+                                 <children>
+                                    <VBox prefWidth="270.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Name" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtCarName" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="270.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Plate Number" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtPlateNumber" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="58.0" prefWidth="472.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Location" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtLocation" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Line fx:id="personalDetailsLine11" endX="1139.0" stroke="#9b9b9b" strokeWidth="0.5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Line>
+                        <VBox prefWidth="1200.0">
+                           <children>
+                              <Label prefHeight="36.0" text="Customer" textFill="#00437a">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefWidth="1139.0" spacing="20.0">
+                                 <children>
+                                    <VBox prefWidth="366.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Name" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtCustomerName" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="366.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Email" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtEmail" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="366.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Gender" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtGender" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="366.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="IC / Passport Number" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtICPassportNumber" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefWidth="1139.0" spacing="20.0">
+                                 <children>
+                                    <VBox prefWidth="270.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Contact" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtContact" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="270.0">
+                                       <children>
+                                          <Label prefHeight="26.0" text="Country" VBox.vgrow="ALWAYS" />
+                                          <TextField fx:id="txtCountry" disable="true" focusTraversable="false" prefHeight="30.0" prefWidth="960.0" style="-fx-opacity: 1;" />
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="BOTTOM_RIGHT" spacing="20.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="btnPay" mnemonicParsing="false" onAction="#switchToMakePayment" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #30B3F3;" text="Pay" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#toCancel" prefHeight="36.0" style="-fx-background-color: #ff4545;" text="Cancel Booking" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="dropdownMenu" layoutX="1090.0" layoutY="60.0" prefHeight="90.0" prefWidth="136.0" style="-fx-background-color: #00437A;" visible="false">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToMyBookings" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="My Bookings" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#switchToCustomerProfile" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="Account Settings" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #00437A;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
